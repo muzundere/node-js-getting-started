@@ -21,9 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+app.get('*',(req, res) => res.render('pages/index'));
 
 app.post('*', (req, res) => res.render('pages/index'));
 
